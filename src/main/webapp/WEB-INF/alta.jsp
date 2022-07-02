@@ -6,7 +6,7 @@
 	<body>
 		<main>
 			<!-- ACA VA EL NAVBAR  -->
-			<%@include file="navbar.jsp" %>
+			<%@include file="navbar.jsp"%>
 			<div class="container">
 				<section>
 					<h1>Alta</h1>

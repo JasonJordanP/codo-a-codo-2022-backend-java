@@ -1,7 +1,6 @@
 package ar.com.codoacodo.controller;
 
-import java.beans.Statement;
-
+import java.sql.Statement;
 import java.io.IOException;
 import java.sql.Connection;
 
@@ -36,7 +35,7 @@ public class CreateController extends HttpServlet{
 		String imagen = req.getParameter("imagen");
 		String codigo = req.getParameter("codigo");
 		
-		//pedir una conexión: AdministradordeCuonexion.getConnection();
+		//pedir una conexión: AdministradordeConexion.getConnection();
 		
 		Connection con = AdministradordeConexiones.getConnection();
 		if(con != null) {
@@ -47,7 +46,7 @@ public class CreateController extends HttpServlet{
 			
 			//ESTO ES UN CONTROL DE ERRORES
 			try {
-				java.sql.Statement st = con.createStatement();
+				Statement st = con.createStatement();
 					st.execute(sql);
 					
 					//Cierre de la conexión

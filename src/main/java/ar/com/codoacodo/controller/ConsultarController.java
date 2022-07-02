@@ -1,11 +1,12 @@
 package ar.com.codoacodo.controller;
 
-import java.beans.Statement;
+
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.util.Date;
 import java.sql.ResultSet;
+import java.sql.Statement;
 
 import ar.com.codoacodo.connection.AdministradordeConexiones;
 import ar.com.codoacodo.dto.Producto;
@@ -37,7 +38,7 @@ public class ConsultarController extends HttpServlet{
 			Connection con = AdministradordeConexiones.getConnection();
 			//STATENMENT
 			try {
-			java.sql.Statement st = con.createStatement();
+			Statement st = con.createStatement();
 			
 			//ESTO NOS DEVULEVE UN RESULT SET:
 			ResultSet rs = st.executeQuery(sql);

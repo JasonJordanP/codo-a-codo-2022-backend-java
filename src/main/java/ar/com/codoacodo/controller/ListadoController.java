@@ -1,6 +1,6 @@
 package ar.com.codoacodo.controller;
 
-import java.beans.Statement;
+import java.sql.Statement;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -37,9 +37,9 @@ public class ListadoController extends HttpServlet{
 			//OBTENGO LA CONEXION
 			
 			Connection con = AdministradordeConexiones.getConnection();
-			//STATENMENT
+			//STATEMENT
 			try {
-			java.sql.Statement st = con.createStatement();
+			Statement st = con.createStatement();
 			
 			//ESTO NOS DEVULEVE UN RESULT SET:
 			ResultSet rs = st.executeQuery(sql);
