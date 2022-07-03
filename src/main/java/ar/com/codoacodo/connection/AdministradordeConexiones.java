@@ -23,7 +23,7 @@ public class AdministradordeConexiones {
 		Connection con = null;
 		try {
 			Class.forName(driverName); //carga en memoria el driver
-			con = DriverManager.getConnection(url,username,password);
+			con = DriverManager.getConnection(url,user,password);
 		}catch(Exception e) {
 			e.printStackTrace(); //Se que pasó o por qué falló
 		}

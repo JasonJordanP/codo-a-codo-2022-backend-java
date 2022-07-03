@@ -33,6 +33,11 @@ public class FabricaDeAutos {
 		
 		System.out.println("FIN");
 	}
+
+	private static Motor newMotor(String string, float f) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 
 }
