@@ -55,7 +55,7 @@ public class CreateController extends HttpServlet{
 	
 					//ESTO NO getServletContext().getRequestDispatcher("/api/ListadoController.jsp").forward(req, resp);
 					
-					resp.sendRedirect(req.getContextPath()+"api/ListadoController");
+					resp.sendRedirect(req.getContextPath()+"/api/ListadoController");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

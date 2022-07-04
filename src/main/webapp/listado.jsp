@@ -1,5 +1,5 @@
 
-<%@page import = "java.util.List" %>
+<%@page import = "java.util.List"%>
 <%@page import = "ar.com.codoacodo.dto.Producto" %>
 
 <html>
