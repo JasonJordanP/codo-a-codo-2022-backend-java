@@ -12,36 +12,29 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/CreateController")
+@WebServlet("/api/EliminarController")
 //HERENCIA
-public class CreateController extends HttpServlet{
+public class EliminarController extends HttpServlet{
 
 		@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		//RECIBE LOS DATOS EN EL FRONT
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		
-		//en req viene los datos que manda el formulario HTML
 			
-		String nombre = req.getParameter("nombre");
-		String precio = req.getParameter("precio");
-		String fechaCreacion = "";  //ESTE DATO SE LO DAMOS NOSOTROS
-		String imagen = req.getParameter("imagen");
-		String codigo = req.getParameter("codigo");
+		String id = req.getParameter("id");
+	
 		
-		//pedir una conexión: AdministradordeConexion.getConnection();
+		//pedir una conexión: AdministradordeConexiones.getConnection();
 		
 		Connection con = AdministradordeConexiones.getConnection();
 		if(con != null) {
-			//insert en la database > SQL: INSERT INTO...
-			String sql = "INSERT INTO PRODUCTO (nombre, precio, fecha_creacion, imagen, codigo)";
-			sql += "VALUES('"+nombre+"',"+precio+", CURRENT_DATE, '"+imagen+"','"+codigo+"')";
+			//delete en la database
+			String sql = "DELETE FROM PRODUCTO WHERE id="+id;
 			
 			
 			//ESTO ES UN CONTROL DE ERRORES
 			try {
 				Statement st = con.createStatement();
-					st.execute(sql);
+					st.executeUpdate(sql);
 					
 					//Cierre de la conexión
 					
