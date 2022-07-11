@@ -12,7 +12,7 @@ import ar.com.codoacodo.daos.ProductoDAO;
 
 /*HERENCIA*/
 //Create Controller es hijo de :
-@WebServlet("/CreateController")
+@WebServlet("/api/CreateController")
 public class CreateController extends HttpServlet {
 
 	@Override

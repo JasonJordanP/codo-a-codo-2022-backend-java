@@ -47,6 +47,7 @@ public class ProductoDAO {
 				
 				prodFromDataBase = new Producto (idProducto, nombre, precio, fecha, imagen, codigo);
 			}
+			con.close();
 		} catch (SQLException e) {
 				//si da algún error:
 			e.printStackTrace();
@@ -123,7 +124,7 @@ public void crearProducto(String nombre, Float precio, String imagen, String cod
 	}
 }
 
-public void actualizarProducto(String codigo, String nombre, String precio) {
+public void actualizarProducto(String nombre,Float precio, String codigo) {
 	Connection con = AdministradordeConexiones.getConnection();
 	if(con != null) { 
 		String sql = "UPDATE PRODUCTO "
@@ -143,9 +144,30 @@ public void actualizarProducto(String codigo, String nombre, String precio) {
 	}
 }
 
+public void eliminarProducto(Long id) {
+	
+	Connection con = AdministradordeConexiones.getConnection();
+	
+	if(con != null) { 
+		// delete 
+		String sql = "DELETE FROM PRODUCTO WHERE id="+id;
+		
+		try {
+			Statement st = con.createStatement();			
+			
+			st.executeUpdate(sql);
+			
+			con.close();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
+
 /*metodos del crud*/
 public List<Producto> buscar(String clave) {
-	String sql = "SELECT * FROM PRODUCTO WHERE nombre LIKE '%"+clave+"%' ";
+	String sql = "SELECT * FROM PRODUCTO WHERE NOMBRE LIKE '%"+clave+"%' ";
 	
 	//Connection
 	Connection con = AdministradordeConexiones.getConnection();
@@ -161,7 +183,7 @@ public List<Producto> buscar(String clave) {
 		
 		//VIENE UN SOLO REGISTRO!!!
 		
-		if(rs.next()) {//si existe, hay uno solo
+		while(rs.next()) {//si existe, hay uno solo
 			// rs > sacando los datos
 			Long idProducto = rs.getLong(1);//tomar la primer columna
 			String nombre = rs.getString(2);

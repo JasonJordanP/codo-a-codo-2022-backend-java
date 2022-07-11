@@ -1,7 +1,5 @@
-
-<%@page import = "java.util.List"%>
-<%@page import = "ar.com.codoacodo.dto.Producto" %>
-
+<%@page import="java.util.List"%>
+<%@page import="ar.com.codoacodo.dto.Producto"%>
 <html>
 	<head>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -41,9 +39,8 @@
 					      <td><%=unProducto.getPrecio() %></td>
 					      <td><%=unProducto.getCodigo() %></td>
 					      <td>
-					      
-					      <a class="btn btn-danger" href="<%=request.getContextPath()%>/api/EliminarController?id=<%=unProducto.getIdProducto()%>" role="button">Eliminar</a>
-					      <a class="btn btn-secondary" href="<%=request.getContextPath()%>/api/EditarController?id=<%=unProducto.getIdProducto()%>" role="button">Editar</a>
+					      	<a class="btn btn-danger" href="<%=request.getContextPath()%>/api/EliminarController?id=<%=unProducto.getIdProducto()%>" role="button">Eliminar</a> | 
+					      	<a class="btn btn-secondary" href="<%=request.getContextPath()%>/api/EditarController?id=<%=unProducto.getIdProducto()%>" role="button">Editar</a>
 					      </td>
 					    </tr>
 					   <%

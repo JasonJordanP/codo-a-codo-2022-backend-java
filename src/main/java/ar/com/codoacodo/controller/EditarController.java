@@ -43,7 +43,7 @@ public class EditarController extends HttpServlet {
 		ProductoDAO dao = new ProductoDAO();
 		
 		//invocar actualizarProducto(params)
-		dao.actualizarProducto(codigo, nombre, precio);
+		dao.actualizarProducto(nombre, Float.parseFloat(precio), codigo);
 
 		//ir a la siguiente pagina
 		resp.sendRedirect(req.getContextPath()+"/api/ListadoController");
