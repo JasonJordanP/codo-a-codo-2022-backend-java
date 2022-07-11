@@ -12,7 +12,7 @@
 					<h1>Alta</h1>
 					<!--  JSP -->
 					<form method="post"
-						action="<%=request.getContextPath()%>/CreateController">
+						action="<%=request.getContextPath()%>/api/CreateController">
 						<div class="mb-3">
 						  <label for="exampleFormControlInput1" class="form-label">Nombre</label>
 						  <input name="nombre"  type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre" maxlength="50">
