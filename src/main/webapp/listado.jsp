@@ -53,5 +53,14 @@
 				</section>
 			</div>
 		</main>
-	</body>	
+	</body>
+	<section>
+	<footer class="text-center" style="background-color: rgb(255, 191, 94); padding: 30px; position: absolute;
+  bottom: 0; width: 100%">
+			      <p>© 2022 Jordan Pérez Urrutia para Codo a Codo. Todos los derechos reservados. 
+			      <br>
+	    <a class="text" href="https://github.com/JasonJordanP">https://github.com/JasonJordanP</a>
+		
+	</footer>
+	</section>	
 </html>
